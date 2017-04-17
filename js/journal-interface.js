@@ -5,7 +5,9 @@ $(document).ready(function() {
     event.preventDefault();
     var sentence = $('#sentence').val();
     var pleaseWork = new Journal("work please");
-    var output = pleaseWork.wordCount(sentence);
-      $('#solution').append("<li>" + output + "</li>");
+    var wordCount = pleaseWork.wordCount(sentence);
+    var vowelCount = pleaseWork.getVowels(sentence);
+    var consonantsCount = pleaseWork.getConsonants(sentence);
+      $('#solution').append("<li> you have " + wordCount + " words in your sentence. Your sentence has " + vowelCount + " vowels and " + consonantsCount + " consonants.</li>");
   });
 });

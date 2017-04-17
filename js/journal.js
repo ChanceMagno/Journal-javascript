@@ -1,5 +1,5 @@
-function Journal(skinName) {
-  this.skin = skinName;
+function Journal(sentence) {
+  this.sentence = sentence;
 }
 
 Journal.prototype.wordCount = function(sentence) {
@@ -8,6 +8,14 @@ Journal.prototype.wordCount = function(sentence) {
     wordCount += 1;
   }
   return wordCount;
+}
+
+Journal.prototype.getVowels = function(sentence) {
+    return sentence.match(/[aeiou]/gi).length;
+}
+
+Journal.prototype.getConsonants = function(sentence) {
+  return sentence.match(/[^aeiou]/gi).length;
 }
 
 exports.journalModule = Journal;
